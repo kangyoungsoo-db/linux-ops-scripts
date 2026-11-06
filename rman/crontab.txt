@@ -1,0 +1,4 @@
+# oracle 계정의 crontab (crontab -e 또는 crontab - 로 등록)
+# 일요일 02:30 Level 0, 월~토 02:30 Level 1
+30 2 * * 0 /backup/scripts/rman_backup.sh 0 >> /backup/logs/cron.log 2>&1
+30 2 * * 1-6 /backup/scripts/rman_backup.sh 1 >> /backup/logs/cron.log 2>&1
